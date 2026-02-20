@@ -9,7 +9,11 @@
     <h1>Auto Website</h1>
     <nav>
         <a href="index.php">Home</a>
-        <a href="cars.php">Cars</a>
-        <a href="services.php">Services</a>
+        <a href="autoturisme.php">Autoturisme</a>
+        <a href="config_model.php">Configureaza model</a>
+        <a href="oferte_standard.php">Nivele echipare standard</a>
+        <a href="harta.php">Harta reprezentante</a>
+        <a href="cont.php">Cont</a>
+
     </nav>
 </header>
