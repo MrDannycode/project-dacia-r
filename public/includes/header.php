@@ -1,3 +1,11 @@
+<?php if (isset($_SESSION["user_id"])): ?>
+    Welcome, <?= $_SESSION["user_name"]; ?> |
+    <a href="logout.php">Logout</a>
+<?php else: ?>
+    <a href="login.php">Login</a> |
+    <a href="register.php">Sign Up</a>
+<?php endif; ?>
+
 <!DOCTYPE html>
 <html>
 <head>

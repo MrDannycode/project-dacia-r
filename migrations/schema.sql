@@ -1,14 +1,55 @@
-CREATE TABLE users (
+-- Drop tables if they already exist (safe reset)
+DROP TABLE IF EXISTS vanzari CASCADE;
+DROP TABLE IF EXISTS oferte CASCADE;
+DROP TABLE IF EXISTS masini CASCADE;
+DROP TABLE IF EXISTS utilizatori CASCADE;
+
+-- =========================
+-- UTILIZATORI
+-- =========================
+CREATE TABLE utilizatori (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(100),
-    email VARCHAR(100) UNIQUE,
-    password VARCHAR(255),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    nume VARCHAR(100) NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL,
+    parola VARCHAR(255) NOT NULL,
+    creat_la TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE cars (
+-- =========================
+-- MASINI
+-- =========================
+CREATE TABLE masini (
     id SERIAL PRIMARY KEY,
-    model VARCHAR(100),
-    price DECIMAL(10,2),
-    image VARCHAR(255)
+    marca VARCHAR(100) NOT NULL,
+    model VARCHAR(100) NOT NULL,
+    an INT NOT NULL,
+    pret NUMERIC(10,2) NOT NULL,
+    descriere TEXT,
+    creat_la TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- =========================
+-- OFERTE
+-- =========================
+CREATE TABLE oferte (
+    id SERIAL PRIMARY KEY,
+    masina_id INT NOT NULL,
+    titlu VARCHAR(150) NOT NULL,
+    descriere TEXT,
+    reducere NUMERIC(5,2),
+    data_start DATE,
+    data_sfarsit DATE,
+    FOREIGN KEY (masina_id) REFERENCES masini(id) ON DELETE CASCADE
+);
+
+-- =========================
+-- VANZARI
+-- =========================
+CREATE TABLE vanzari (
+    id SERIAL PRIMARY KEY,
+    utilizator_id INT NOT NULL,
+    masina_id INT NOT NULL,
+    data_vanzare TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (utilizator_id) REFERENCES utilizatori(id) ON DELETE CASCADE,
+    FOREIGN KEY (masina_id) REFERENCES masini(id) ON DELETE CASCADE
 );
