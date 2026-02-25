@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <h2>Sign Up</h2>
 <a href="index.php">Home</a>
+<a href="login.php">Login</a>
 <form method="POST">
     Name: <input type="text" name="nume" required><br><br>
     Email: <input type="email" name="email" required><br><br>

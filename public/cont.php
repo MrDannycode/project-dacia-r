@@ -1,6 +1,11 @@
 <?php
-require_once __DIR__ . '/../config/database.php';
-include __DIR__ . '/includes/header.php';
+include "includes/header.php"; 
+
+// The Bouncer: Kick out logged-out users
+if (!isset($_SESSION["user_id"])) {
+    header("Location: login.php");
+    exit();
+}
 ?>
 <h1>My Account</h1>
 <p>Authentification and settings.</p>
