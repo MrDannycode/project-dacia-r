@@ -2,7 +2,8 @@
 include __DIR__ . '/includes/header.php';
 ?>
 
-<h1>Știri</h1>
+<h1 class="page-title">Știri</h1>
+<p class="page-subtitle">Ultimele noutăți din lumea Dacia.</p>
 
 <div class="news-grid">
     <?php
@@ -28,6 +29,13 @@ include __DIR__ . '/includes/header.php';
             'description' => 'Înscrie-te la o sesiune de test drive și experimentează personal calitățile vehiculelor Dacia.',
             'link' => 'news3.php',
         ],
+        [
+            'image' => 'assets/images/news/4.jpg',
+            'alt' => 'Hybrid-G 150 4x4',
+            'title' => 'Hybrid-G 150 4x4 pe Dacia Duster (2026)',
+            'description' => 'Primul sistem din lume care combină hibridul, tracțiunea integrală și transmisia automată cu alimentare benzină-GPL.',
+            'link' => 'news4.php',
+        ],
     ];
 
     foreach ($news as $index => $item):
@@ -42,36 +50,5 @@ include __DIR__ . '/includes/header.php';
     </article>
     <?php endforeach; ?>
 </div>
-
-<style>
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-.news-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #fff;
-}
-.news-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
-.news-card h3 {
-    margin: 1rem 1rem 0.5rem;
-    font-size: 1.25rem;
-}
-.news-card p {
-    margin: 0 1rem 1rem;
-    color: #555;
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-</style>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
