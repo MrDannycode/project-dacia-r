@@ -26,6 +26,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <nav>
         <a href="index.php">Home</a>
         <a href="autoturisme.php">Autoturisme</a>
+        <a href="news.php">Știri</a>
         <a href="config_model.php">Configureaza model</a>
         <a href="oferte_standard.php">Nivele echipare standard</a>
         <a href="harta.php">Harta reprezentante</a>
