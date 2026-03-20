@@ -1,0 +1,20 @@
+/* Asigură-te că imaginile sunt responsive */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Opțional: colțuri ușor rotunjite */
+    display: block;
+    margin: 20px auto;
+}
+
+.article-image {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.article-image figcaption {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+    font-style: italic;
+}

@@ -1,5 +1,5 @@
 <?php
-include "includes/header.php"; 
+include "../includes/header.php"; 
 
 // The Bouncer: Kick out logged-out users
 if (!isset($_SESSION["user_id"])) {
@@ -9,4 +9,4 @@ if (!isset($_SESSION["user_id"])) {
 ?>
 <h1>My Account</h1>
 <p>Authentification and settings.</p>
-<?php include __DIR__ . '/includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
