@@ -35,11 +35,11 @@
     // - left arrow: reveal the hidden (next) item
     // - right arrow: go back to the initial items
     prev.addEventListener("click", () => {
-      grid.scrollBy({ left: getStep(), behavior: "smooth" });
+      grid.scrollBy({ left: -getStep(), behavior: "smooth" });
     });
 
     next.addEventListener("click", () => {
-      grid.scrollBy({ left: -getStep(), behavior: "smooth" });
+      grid.scrollBy({ left: getStep(), behavior: "smooth" });
     });
 
     grid.addEventListener("scroll", () => {

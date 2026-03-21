@@ -152,6 +152,33 @@ main {
 
 .news-carousel .news-grid {
   margin: 0;
+  display: flex !important;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0.25rem 0.25rem 0.75rem;
+  --carousel-gap: 1.25rem;
+  gap: var(--carousel-gap);
+  min-width: 0;
+}
+
+.news-carousel .news-card {
+  flex: 0 0 calc((100% - (var(--carousel-gap) * 2)) / 3);
+  scroll-snap-align: start;
+}
+
+@media (max-width: 900px) {
+  .news-carousel .news-card {
+    flex: 0 0 calc((100% - var(--carousel-gap)) / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .news-carousel .news-card {
+    flex: 0 0 100%;
+  }
 }
 
 .news-carousel .carousel-arrow {
@@ -167,19 +194,6 @@ main {
 
 .news-carousel.is-carousel .carousel-arrow {
   display: grid;
-}
-
-.news-carousel.is-carousel .news-grid {
-  display: grid;
-  grid-auto-flow: column;
-  --carousel-gap: 1.25rem;
-  grid-auto-columns: clamp(260px, calc((100% - (var(--carousel-gap) * 2)) / 3), 380px);
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding: 0.25rem 0.25rem 0.75rem;
-  gap: var(--carousel-gap);
 }
 
 .news-carousel.is-carousel .news-grid::-webkit-scrollbar {
