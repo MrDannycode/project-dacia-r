@@ -9,7 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dacia | Auto Website</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=<?= time() ?>">
 </head>
 <body>
 <header class="site-header">
@@ -33,7 +33,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <a href="config_model.php">Configurează model</a>
             <a href="oferte_standard.php">Nivele echipare standard</a>
             <a href="harta.php">Harta reprezentanțe</a>
-            <a href="cont.php">Cont</a>
+            <a href="cont.php">My Dacia</a>
         </nav>
     </div>
 </header>
