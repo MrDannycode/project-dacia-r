@@ -186,18 +186,20 @@ main {
 }
 
 .news-carousel.is-carousel {
-  display: grid;
-  grid-template-columns: 44px 1fr 44px;
+  display: flex;
+  align-items: center;
   gap: 0.75rem;
-  align-items: stretch;
 }
 
 .news-carousel.is-carousel .carousel-arrow {
   display: grid;
+  flex: 0 0 44px;
 }
 
 .news-carousel.is-carousel .news-grid {
-  grid-column: 2;
+  flex: 1 1 auto;
+  min-width: 0;
+  order: 2;
 }
 
 .news-carousel.is-carousel .news-grid::-webkit-scrollbar {
@@ -239,21 +241,21 @@ main {
 }
 
 .carousel-arrow.prev {
-  grid-column: 1;
+  order: 1;
 }
 
 .carousel-arrow.next {
-  grid-column: 3;
+  order: 3;
 }
 
 @media (max-width: 720px) {
   .news-carousel.is-carousel {
-    grid-template-columns: 36px 1fr 36px;
     gap: 0.5rem;
   }
 
   .carousel-arrow {
     width: 36px;
+    flex-basis: 36px;
     border-radius: 10px;
   }
 }
