@@ -30,6 +30,27 @@ $news = [
         'description' => 'Primul sistem din lume care combină hibridul, tracțiunea integrală și transmisia automată cu alimentare benzină-GPL.',
         'link' => 'news4.php',
     ],
+    [
+        'image' => 'assets/images/news/5.jpg',
+        'alt' => 'Dacia Bigster',
+        'title' => 'Bigster devine realitate',
+        'description' => 'Noul SUV Dacia Bigster aduce o prezență impunătoare, spațiu generos și motorizări noi.',
+        'link' => 'news5.php',
+    ],
+    [
+        'image' => 'assets/images/news/6.jpg',
+        'alt' => 'Dacia Sandrider',
+        'title' => 'Dacia participă la Dakar',
+        'description' => 'Echipa Dacia Sandriders se pregătește pentru cea mai dură competiție de motorsport din lume.',
+        'link' => 'news6.php',
+    ],
+    [
+        'image' => 'assets/images/news/7.jpg',
+        'alt' => 'Dacia Spring facelift',
+        'title' => 'Facelift major pentru Spring',
+        'description' => 'Cel mai accesibil model electric se înnoiește cu un design modern și conectivitate de top.',
+        'link' => 'news7.php',
+    ],
 ];
 ?>
 

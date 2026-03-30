@@ -2,42 +2,68 @@
 session_start();
 require_once __DIR__ . '/../config/database.php';
 
+$error_message = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $email = $_POST["email"];
-    $parola = $_POST["parola"];
+    $email = trim($_POST["email"] ?? "");
+    $parola = $_POST["parola"] ?? "";
 
-    $sql = "SELECT * FROM utilizatori WHERE email = :email";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute([':email' => $email]);
+    if (!empty($email) && !empty($parola)) {
+        $sql = "SELECT * FROM utilizatori WHERE email = :email";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([':email' => $email]);
 
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    /*debugging eroare la login
-    var_dump($user);
-    var_dump(password_verify($password, $user["parola"]));
-    exit();
-    era mai inainte 2 utilizatori cu acelasi nume, cand am creat un utilizator nou a mers loginul*/
+        if ($user && password_verify($parola, $user["password_hash"])) {
 
-    if ($user && password_verify($parola, $user["parola"])) {
+            $_SESSION["user_id"] = $user["id"];
+            $_SESSION["user_name"] = trim($user["first_name"] . ' ' . $user["last_name"]);
 
-        $_SESSION["user_id"] = $user["id"];
-        $_SESSION["user_name"] = $user["nume"];
+            header("Location: index.php");
+            exit();
 
-        header("Location: index.php");
-        exit();
-
+        } else {
+            $error_message = "Adresa de email sau parola este incorectă!";
+        }
     } else {
-        echo "Invalid email or password!";
+        $error_message = "Toate câmpurile sunt obligatorii!";
     }
 }
+
+require_once __DIR__ . '/includes/header.php';
 ?>
 
-<h2>Login</h2>
-<a href="index.php">Home</a>
-<a href="register.php">Sign Up</a>
-<form method="POST">
-    Email: <input type="email" name="email" required><br><br>
-    Password: <input type="password" name="parola" required><br><br>
-    <button type="submit">Login</button>
-</form>
+<div class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2 class="auth-title">Autentificare cont</h2>
+            <p class="auth-subtitle">Bine ai revenit! Introdu datele pentru a te autentifica.</p>
+
+            <?php if (!empty($error_message)): ?>
+                <div class="auth-error"><?= htmlspecialchars($error_message) ?></div>
+            <?php endif; ?>
+
+            <form method="POST" class="auth-form">
+                <div class="form-group">
+                    <label for="email">Adresă de email</label>
+                    <input type="email" id="email" name="email" required placeholder="nume@exemplu.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="parola">Parolă</label>
+                    <input type="password" id="parola" name="parola" required placeholder="Introdu parola ta">
+                </div>
+                
+                <button type="submit" class="btn-auth">Conectare</button>
+            </form>
+            
+            <div class="auth-links">
+                Nu ai un cont încă? <a href="register.php">Înregistrează-te</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php require_once __DIR__ . '/includes/footer.php'; ?>
