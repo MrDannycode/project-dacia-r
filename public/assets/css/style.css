@@ -95,6 +95,12 @@ body {
   transition: color var(--transition);
 }
 
+.site-title img {
+  height: 45px;
+  width: auto;
+  vertical-align: middle;
+}
+
 .site-nav {
   display: flex;
   flex-wrap: wrap;
