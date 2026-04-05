@@ -1,0 +1,205 @@
+/* ===== Mașinile Mele (masinile-mele.php) ===== */
+.mycar-page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.mycar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.mycar-header-left .page-title {
+    margin-bottom: 0.25rem;
+}
+
+.mycar-new-btn {
+    width: auto !important;
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.9rem !important;
+    white-space: nowrap;
+}
+
+.mycar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.mycar-card {
+    background: var(--color-bg-card);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mycar-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.mycar-card-header {
+    background: linear-gradient(135deg, var(--color-header) 0%, #252830 100%);
+    color: #fff;
+    padding: 1.25rem 1.25rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.mycar-model {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.mycar-body {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin-top: 0.15rem;
+    display: block;
+}
+
+.mycar-status {
+    background: rgba(200, 152, 46, 0.2);
+    color: var(--color-accent);
+    border: 1px solid rgba(200, 152, 46, 0.4);
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.mycar-card-body {
+    padding: 0.75rem 1.25rem;
+    flex: 1;
+}
+
+.mycar-spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.88rem;
+}
+
+.mycar-spec-row:last-child {
+    border-bottom: none;
+}
+
+.mycar-spec-label {
+    color: var(--color-text-muted);
+}
+
+.mycar-eco {
+    color: #27ae60;
+}
+
+.mycar-card-footer {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    background: #fafafa;
+}
+
+.mycar-footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.mycar-pret {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+.mycar-date {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+}
+
+.mycar-btn-delete {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: transparent;
+    border: 1.5px solid #e74c3c;
+    color: #e74c3c;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.mycar-btn-delete:hover {
+    background: #e74c3c;
+    color: #fff;
+}
+
+/* Empty state */
+.mycar-empty {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: var(--color-bg-card);
+    border-radius: 12px;
+    border: 1px dashed var(--color-border);
+}
+
+.mycar-empty-icon {
+    color: var(--color-border);
+    margin-bottom: 1.5rem;
+}
+
+.mycar-empty h2 {
+    font-size: 1.4rem;
+    margin: 0 0 0.5rem;
+    color: var(--color-header);
+}
+
+.mycar-empty p {
+    color: var(--color-text-muted);
+    margin: 0 0 2rem;
+}
+
+.mycar-empty .cfg-btn-save {
+    max-width: 260px;
+    margin: 0 auto;
+}
+
+/* Back link */
+.mycar-back {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.btn-back-car {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.btn-back-car:hover {
+    color: var(--color-accent);
+}

@@ -1,0 +1,98 @@
+/* ===== Account Page ===== */
+.account-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.account-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.account-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.account-grid .news-card {
+    padding: 2.5rem 2rem;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.account-grid .news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(200, 152, 46, 0.2);
+}
+
+.account-icon {
+    margin-bottom: 1.5rem;
+    color: var(--color-accent);
+    background: rgba(200, 152, 46, 0.1);
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.account-card-title {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+}
+
+.account-card-desc {
+    color: var(--color-text-muted);
+    margin: 0 0 1.5rem;
+    flex-grow: 1;
+}
+
+.btn-account {
+    background: var(--color-accent);
+    color: #fff !important;
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    width: 100%;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-block;
+}
+
+.btn-account:hover {
+    background: var(--color-accent-hover) !important;
+    transform: scale(1.02);
+}
+
+.account-logout-wrapper {
+    margin-top: 4rem;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    padding-top: 3rem;
+}
+
+.btn-logout {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2.5rem;
+    background: transparent;
+    border: 2px solid #e74c3c;
+    color: #e74c3c !important;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-logout:hover {
+    background: #e74c3c;
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.2);
+}
