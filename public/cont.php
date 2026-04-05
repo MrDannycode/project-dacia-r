@@ -61,7 +61,7 @@ if (!isset($_SESSION["user_id"])) {
             <p class="account-card-desc">
                 Vezi lista de mașini și configurații pe care le-ai salvat anterior.
             </p>
-            <a href="autoturisme.php" class="btn-account">Vezi Mașinile</a>
+            <a href="masinile-mele.php" class="btn-account">Vezi Mașinile</a>
         </div>
 
     </div>

@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $_SESSION["user_id"] = $user["id_utilizator"];
             $_SESSION["user_name"] = trim($user["first_name"] . ' ' . $user["last_name"]);
+            $_SESSION["role"] = $user["role"];
 
             header("Location: index.php");
             exit();

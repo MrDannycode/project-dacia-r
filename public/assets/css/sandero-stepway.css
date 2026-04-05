@@ -1,0 +1,123 @@
+    .stepway-content-wrapper {
+        max-width: 900px;
+        margin: 2rem auto;
+        font-family: inherit;
+        color: #333;
+    }
+
+    .stepway-hero {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .stepway-hero h1 {
+        color: #D84315;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .stepway-hero p {
+        font-size: 1.2rem;
+        color: #666;
+    }
+
+    .stepway-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid #eaeaea;
+    }
+
+    .stepway-image {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .stepway-details {
+        padding: 2.5rem;
+    }
+
+    .stepway-details h2 {
+        color: #222;
+        margin-top: 0;
+        font-size: 1.8rem;
+    }
+
+    .stepway-details p {
+        line-height: 1.7;
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    .stepway-specs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid #eee;
+    }
+
+    .spec-item {
+        flex: 1 1 calc(33.333% - 1.5rem);
+        background: #f8f9fa;
+        padding: 1.5rem 1rem;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid #e9ecef;
+    }
+
+    .spec-item strong {
+        display: block;
+        color: #D84315;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .spec-item span {
+        color: #6c757d;
+        font-size: 0.95rem;
+    }
+
+    .stepway-features {
+        margin-top: 2.5rem;
+    }
+
+    .stepway-features h3 {
+        color: #222;
+        font-size: 1.5rem;
+        border-bottom: 2px solid #D84315;
+        padding-bottom: 0.5rem;
+        display: inline-block;
+    }
+
+    .features-list {
+        list-style-type: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .features-list li {
+        background: #fdfdfd;
+        padding: 0.8rem 1rem;
+        border-left: 4px solid #D84315;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        font-size: 1rem;
+        color: #444;
+    }
+
+    @media (max-width: 768px) {
+        .spec-item {
+            flex: 1 1 100%;
+        }
+
+        .features-list {
+            grid-template-columns: 1fr;
+        }
+    }

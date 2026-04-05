@@ -19,6 +19,9 @@ if (session_status() === PHP_SESSION_NONE) {
             <div class="header-top-inner">
                 <?php if (isset($_SESSION["user_id"])): ?>
                     <span>Bun venit, <?= htmlspecialchars($_SESSION["user_name"]) ?></span>
+                    <?php if (isset($_SESSION["role"]) && in_array($_SESSION["role"], ['news_admin', 'super_admin'])): ?>
+                        <a href="admin_stiri.php" style="color:red; font-weight:bold;">Administrează Știrile</a>
+                    <?php endif; ?>
                     <a href="logout.php">Logout</a>
                 <?php else: ?>
                     <a href="login.php">Login</a>
