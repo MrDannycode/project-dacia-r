@@ -17,9 +17,11 @@ include __DIR__ . '/includes/header.php';
             : 'https://picsum.photos/400/250?random=' . $item['id_stire'];
         ?>
         <article class="news-card">
-            <img src="<?= htmlspecialchars($imgSrc) ?>" alt="<?= htmlspecialchars($item['alt_imagine'] ?? 'Stire Dacia') ?>">
+            <img src="<?= htmlspecialchars($imgSrc) ?>"
+                alt="<?= htmlspecialchars($item['alt_imagine'] ?? 'Stire Dacia') ?>">
             <h3><?= htmlspecialchars($item['titlu']) ?></h3>
-            <p><?= htmlspecialchars($item['descriere']) ?> <a href="stire.php?id=<?= $item['id_stire'] ?>">...Citeste mai mult</a></p>
+            <p><?= htmlspecialchars($item['descriere']) ?> <a href="stire.php?id=<?= $item['id_stire'] ?>">...Citeste mai
+                    mult</a></p>
         </article>
     <?php endforeach; ?>
 </div>
