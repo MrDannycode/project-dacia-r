@@ -61,7 +61,7 @@ require_once __DIR__ . '/includes/header.php';
             </form>
             
             <div class="auth-links">
-                Nu ai un cont încă? <a href="register.php">Înregistrează-te</a>
+                Nu ai un cont încă? <a href="logregister.php">Înregistrează-te</a>
             </div>
         </div>
     </div>

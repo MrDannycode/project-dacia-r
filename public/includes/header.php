@@ -20,13 +20,10 @@ $prefix = (isset($is_subdir) && $is_subdir) ? '../' : '';
             <div class="header-top-inner">
                 <?php if (isset($_SESSION["user_id"])): ?>
                     <span>Bun venit, <?= htmlspecialchars($_SESSION["user_name"]) ?></span>
-                    <?php if (isset($_SESSION["role"]) && in_array($_SESSION["role"], ['news_admin', 'super_admin'])): ?>
-                        <a href="<?= $prefix ?>admin_stiri.php" style="color:red; font-weight:bold;">Administrează Știrile</a>
-                    <?php endif; ?>
                     <a href="<?= $prefix ?>logout.php">Logout</a>
                 <?php else: ?>
                     <a href="<?= $prefix ?>login.php">Login</a>
-                    <a href="<?= $prefix ?>register.php">Înregistrare</a>
+                    <a href="<?= $prefix ?>logregister.php">Înregistrare</a>
                 <?php endif; ?>
             </div>
         </div>
@@ -40,6 +37,9 @@ $prefix = (isset($is_subdir) && $is_subdir) ? '../' : '';
                 <a href="<?= $prefix ?>nav-news.php">Știri</a>
                 <a href="<?= $prefix ?>nav-harta.php">Harta reprezentanțe</a>
                 <a href="<?= $prefix ?>account.php">My Dacia</a>
+                <?php if (isset($_SESSION["role"]) && in_array($_SESSION["role"], ['news_admin', 'super_admin'])): ?>
+                    <a href="<?= $prefix ?>admin-stiri.php" style="margin-left: auto;">Administrează Știrile</a>
+                <?php endif; ?>
             </nav>
         </div>
     </header>

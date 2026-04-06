@@ -71,7 +71,7 @@ require_once __DIR__ . '/includes/header.php';
     <?php if ($success): ?><p style="color:green;"><?= htmlspecialchars($success) ?></p><?php endif; ?>
 
     <?php if ($action === 'list'): ?>
-        <a href="admin_stiri.php?action=add" class="btn">Adaugă Știre Nouă</a>
+        <a href="admin-stiri.php?action=add" class="btn">Adaugă Știre Nouă</a>
         <br><br>
         <table border="1" style="width: 100%; border-collapse: collapse;">
             <thead>
@@ -91,7 +91,7 @@ require_once __DIR__ . '/includes/header.php';
                     echo "<td>" . htmlspecialchars($row['titlu']) . "</td>";
                     echo "<td>" . htmlspecialchars($row['data_publicarii']) . "</td>";
                     echo "<td>
-                            <a href='admin_stiri.php?action=edit&id=" . $row['id_stire'] . "'>Edit</a> | 
+                            <a href='admin-stiri.php?action=edit&id=" . $row['id_stire'] . "'>Edit</a> | 
                             <form method='POST' style='display:inline;' onsubmit='return confirm(\"Sigur ștergi această știre?\");'>
                                 <input type='hidden' name='action' value='delete'>
                                 <input type='hidden' name='id_stire' value='" . $row['id_stire'] . "'>
@@ -147,7 +147,7 @@ require_once __DIR__ . '/includes/header.php';
             <button type="submit" class="btn" style="border:none; cursor:pointer; font-size:16px; margin-top:10px;">
                 <?= $action === 'add' ? 'Adaugă Știrea' : 'Salvează Modificări' ?>
             </button>
-            <a href="admin_stiri.php" style="margin-left: 15px;">Renunță</a>
+            <a href="admin-stiri.php" style="margin-left: 15px;">Renunță</a>
         </form>
     <?php endif; endif; ?>
 </div>
