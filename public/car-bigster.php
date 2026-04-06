@@ -1,17 +1,17 @@
 <?php session_start(); ?>
-<?php 
-$is_subdir = true;
-include __DIR__ . '/../includes/header.php'; 
+<?php
+$is_subdir = false;
+include __DIR__ . '/includes/header.php';
 ?>
 
-<link rel="stylesheet" href="../assets/css/bigster.css?v=<?= time() ?>">
+<link rel="stylesheet" href="assets/css/car-bigster.css?v=<?= time() ?>">
 
 <?php
 $model_bigster = [
     "titlu" => "Noul Dacia Bigster",
     "subtitlu" => "Cel mai mare și tehnologizat SUV din istoria mărcii",
     "descriere" => "Cu o lungime de 4,57 metri, Dacia Bigster marchează intrarea spectaculoasă în segmentul C-SUV. Păstrând designul robust și vertical inspirat de Duster, fratele mai mare plusează printr-un spațiu interior impresionant, un portbagaj record în clasa sa și materiale prietenoase cu mediul. Totodată, aduce în premieră pentru Dacia noul motor puternic HYBRID 155 și un nivel de confort nemaivăzut pe modelele mărcii.",
-    "imagine" => "../assets/images/info/bigster-info1.jfif",
+    "imagine" => "assets/images/info/bigster-info1.jfif",
     "specificatii" => [
         "Motorizare" => "HYBRID 155 / mild-hybrid 140 / ECO-G 140",
         "Volum portbagaj" => "Până la 702 Litri (VDA)",
@@ -64,12 +64,13 @@ $model_bigster = [
                 </ul>
             </div>
         </div>
-        <img class="bigster-image" src="../assets/images/info/bigster-info2.jfif" alt="Dacia Bigster - detalii suplimentare">
+        <img class="bigster-image" src="assets/images/info/bigster-info2.jfif"
+            alt="Dacia Bigster - detalii suplimentare">
     </div>
 
     <div class="bigster-back-btn">
-        <a href="../nav-autoturisme.php" class="btn-account">Înapoi la Autoturisme</a>
+        <a href="nav-autoturisme.php" class="btn-account">Înapoi la Autoturisme</a>
     </div>
 </div>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+<?php include __DIR__ . '/includes/footer.php'; ?>

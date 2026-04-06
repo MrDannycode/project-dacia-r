@@ -54,6 +54,8 @@ $comenzi = $stmt->fetchAll(PDO::FETCH_ASSOC);
 include __DIR__ . '/includes/header.php';
 ?>
 
+<link rel="stylesheet" href="assets/css/account-cars.css?v=<?= time() ?>">
+
 <div class="mycar-page">
 
     <div class="mycar-header">

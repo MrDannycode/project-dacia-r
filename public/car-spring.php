@@ -1,17 +1,17 @@
 <?php session_start(); ?>
-<?php 
-$is_subdir = true;
-include __DIR__ . '/../includes/header.php'; 
+<?php
+$is_subdir = false;
+include __DIR__ . '/includes/header.php';
 ?>
 
-<link rel="stylesheet" href="../assets/css/spring.css?v=<?= time() ?>">
+<link rel="stylesheet" href="assets/css/car-spring.css?v=<?= time() ?>">
 
 <?php
 $model_spring = [
     "titlu" => "Noul Dacia Spring",
     "subtitlu" => "Mașina electrică de oraș, accesibilă și conectată",
     "descriere" => "Cel mai accesibil model electric din Europa a primit o transformare majoră. Noul Dacia Spring adoptă limbajul robust de design al mărcii, aducând un interior complet redesenat, mai multă tehnologie și un spațiu de depozitare optimizat. Cu o greutate redusă și o eficiență remarcabilă, Spring rămâne soluția perfectă pentru mobilitatea urbană cu zero emisii, fiind incredibil de agilă și ușor de parcat.",
-    "imagine" => "../assets/images/info/spring-info1.jpg",
+    "imagine" => "assets/images/info/spring-info1.jpg",
     "specificatii" => [
         "Motorizare" => "100% Electric (45 CP / 65 CP)",
         "Autonomie (WLTP)" => "Până la 225 km",
@@ -64,10 +64,10 @@ $model_spring = [
                 </ul>
             </div>
         </div>
-        <img class="spring-image" src="../assets/images/info/spring-info2.jpg" alt="Dacia Spring - detalii suplimentare">
+        <img class="spring-image" src="assets/images/info/spring-info2.jpg" alt="Dacia Spring - detalii suplimentare">
         <div class="spring-back-btn">
-            <a href="../nav-autoturisme.php" class="btn-account">Înapoi la Autoturisme</a>
+            <a href="nav-autoturisme.php" class="btn-account">Înapoi la Autoturisme</a>
         </div>
     </div>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+    <?php include __DIR__ . '/includes/footer.php'; ?>

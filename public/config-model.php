@@ -80,6 +80,8 @@ $culori = [
 include __DIR__ . '/includes/header.php';
 ?>
 
+<link rel="stylesheet" href="assets/css/config-model.css?v=<?= time() ?>">
+
 <div class="configurator-page">
 
     <div class="configurator-header">

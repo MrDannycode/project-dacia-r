@@ -28,15 +28,17 @@ $masini = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Map model names to image files and detail pages
 $modelMap = [
-    'Sandero Stepway' => ['img' => 'sandero-mic.jpg', 'page' => 'cars-pages/sandero-stepway.php'],
-    'Sandero' => ['img' => 'sandero-mic.jpg', 'page' => 'cars-pages/sandero.php'],
-    'Logan' => ['img' => 'logan-mic.png', 'page' => 'cars-pages/logan.php'],
-    'Duster' => ['img' => 'duster-mic.jpg', 'page' => 'cars-pages/duster.php'],
-    'Bigster' => ['img' => 'bigster-mic.jpg', 'page' => 'cars-pages/bigster.php'],
-    'Jogger' => ['img' => 'jogger-mic.jpg', 'page' => 'cars-pages/jogger.php'],
-    'Spring' => ['img' => 'spring-micc.jpg', 'page' => 'cars-pages/spring.php'],
+    'Sandero Stepway' => ['img' => 'sandero-mic.jpg', 'page' => 'car-sandero-stepway.php'],
+    'Sandero' => ['img' => 'sandero-mic.jpg', 'page' => 'car-sandero.php'],
+    'Logan' => ['img' => 'logan-mic.png', 'page' => 'car-logan.php'],
+    'Duster' => ['img' => 'duster-mic.jpg', 'page' => 'car-duster.php'],
+    'Bigster' => ['img' => 'bigster-mic.jpg', 'page' => 'car-bigster.php'],
+    'Jogger' => ['img' => 'jogger-mic.jpg', 'page' => 'car-jogger.php'],
+    'Spring' => ['img' => 'spring-micc.jpg', 'page' => 'car-spring.php'],
 ];
 ?>
+
+<link rel="stylesheet" href="assets/css/nav-oferte-standard.css?v=<?= time() ?>">
 
 <h1>Oferte Standard</h1>
 <p>Vezi cele mai bune oferte – prețuri de la versiunea de bază:</p>

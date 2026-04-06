@@ -12,7 +12,7 @@ include __DIR__ . '/includes/header.php';
         <h3 class="card-title-top">Sandero Stepway</h3>
         <img src="assets/images/sandero-mic.jpg" alt="Sandero Stepway">
         <div class="card-buttons">
-            <a href="cars-pages/sandero-stepway.php" class="btn-account btn-small">Info</a>
+            <a href="car-sandero-stepway.php" class="btn-account btn-small">Info</a>
             <a href="config-model.php" class="btn-account btn-small btn-outline">Configurare avansată</a>
         </div>
     </div>
@@ -20,7 +20,7 @@ include __DIR__ . '/includes/header.php';
         <h3 class="card-title-top">Bigster</h3>
         <img src="assets/images/bigster-mic.jpg" alt="Bigster">
         <div class="card-buttons">
-            <a href="cars-pages/bigster.php" class="btn-account btn-small">Info</a>
+            <a href="car-bigster.php" class="btn-account btn-small">Info</a>
             <a href="config-model.php" class="btn-account btn-small btn-outline">Configurare avansată</a>
         </div>
     </div>
@@ -28,7 +28,7 @@ include __DIR__ . '/includes/header.php';
         <h3 class="card-title-top">Duster</h3>
         <img src="assets/images/duster-mic.jpg" alt="Duster">
         <div class="card-buttons">
-            <a href="cars-pages/duster.php" class="btn-account btn-small">Info</a>
+            <a href="car-duster.php" class="btn-account btn-small">Info</a>
             <a href="config-model.php" class="btn-account btn-small btn-outline">Configurare avansată</a>
         </div>
     </div>
@@ -36,7 +36,7 @@ include __DIR__ . '/includes/header.php';
         <h3 class="card-title-top">Jogger</h3>
         <img src="assets/images/jogger-mic.jpg" alt="Jogger">
         <div class="card-buttons">
-            <a href="cars-pages/jogger.php" class="btn-account btn-small">Info</a>
+            <a href="car-jogger.php" class="btn-account btn-small">Info</a>
             <a href="config-model.php" class="btn-account btn-small btn-outline">Configurare avansată</a>
         </div>
     </div>
@@ -44,7 +44,7 @@ include __DIR__ . '/includes/header.php';
         <h3 class="card-title-top">Logan</h3>
         <img src="assets/images/logan-mic.png" alt="Logan">
         <div class="card-buttons">
-            <a href="cars-pages/logan.php" class="btn-account btn-small">Info</a>
+            <a href="car-logan.php" class="btn-account btn-small">Info</a>
             <a href="config-model.php" class="btn-account btn-small btn-outline">Configurare avansată</a>
         </div>
     </div>
@@ -52,7 +52,7 @@ include __DIR__ . '/includes/header.php';
         <h3 class="card-title-top">Sandero</h3>
         <img src="assets/images/sandero-mic.jpg" alt="Sandero">
         <div class="card-buttons">
-            <a href="cars-pages/sandero.php" class="btn-account btn-small">Info</a>
+            <a href="car-sandero.php" class="btn-account btn-small">Info</a>
             <a href="config-model.php" class="btn-account btn-small btn-outline">Configurare avansată</a>
         </div>
     </div>
@@ -60,7 +60,7 @@ include __DIR__ . '/includes/header.php';
         <h3 class="card-title-top">Spring</h3>
         <img src="assets/images/spring-micc.jpg" alt="Spring">
         <div class="card-buttons">
-            <a href="cars-pages/spring.php" class="btn-account btn-small">Info</a>
+            <a href="car-spring.php" class="btn-account btn-small">Info</a>
             <a href="config-model.php" class="btn-account btn-small btn-outline">Configurare avansată</a>
         </div>
     </div>

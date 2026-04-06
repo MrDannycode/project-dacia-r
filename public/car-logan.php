@@ -1,17 +1,17 @@
 <?php session_start(); ?>
-<?php 
-$is_subdir = true;
-include __DIR__ . '/../includes/header.php'; 
+<?php
+$is_subdir = false;
+include __DIR__ . '/includes/header.php';
 ?>
 
-<link rel="stylesheet" href="../assets/css/logan.css?v=<?= time() ?>">
+<link rel="stylesheet" href="assets/css/car-logan.css?v=<?= time() ?>">
 
 <?php
 $model_logan = [
     "titlu" => "Noul Dacia Logan",
     "subtitlu" => "Evoluția sedanului tău preferat",
     "descriere" => "Construită pe noua platformă CMF-B, ultima generație de Dacia Logan oferă un design complet redesenat, faruri LED cu semnătura luminoasă în formă de Y, sistem multimedia avansat și sisteme de siguranță moderne, precum frânarea automată de urgență. Păstrează atributele care au consacrat-o: un habitaclu spațios și un portbagaj de clasă superioară.",
-    "imagine" => "../assets/images/info/logan-info1.jfif",
+    "imagine" => "assets/images/info/logan-info1.jfif",
     "specificatii" => [
         "Motorizare" => "TCe 90 / ECO-G 100",
         "Volum Portbagaj" => "528 Litri",
@@ -64,12 +64,12 @@ $model_logan = [
                 </ul>
             </div>
         </div>
-        <img class="logan-image" src="../assets/images/info/logan-info2.jfif" alt="Dacia Logan - detalii suplimentare">
+        <img class="logan-image" src="assets/images/info/logan-info2.jfif" alt="Dacia Logan - detalii suplimentare">
     </div>
 
     <div class="logan-back-btn">
-        <a href="../nav-autoturisme.php" class="btn-account">Înapoi la Autoturisme</a>
+        <a href="nav-autoturisme.php" class="btn-account">Înapoi la Autoturisme</a>
     </div>
 </div>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+<?php include __DIR__ . '/includes/footer.php'; ?>

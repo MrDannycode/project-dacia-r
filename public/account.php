@@ -9,6 +9,8 @@ if (!isset($_SESSION["user_id"])) {
 }
 ?>
 
+<link rel="stylesheet" href="assets/css/account.css?v=<?= time() ?>">
+
 <div class="account-container">
     <header class="account-header">
         <h1 class="page-title">Contul Meu</h1>

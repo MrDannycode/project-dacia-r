@@ -1,17 +1,17 @@
 <?php session_start(); ?>
-<?php 
-$is_subdir = true;
-include __DIR__ . '/../includes/header.php'; 
+<?php
+$is_subdir = false;
+include __DIR__ . '/includes/header.php';
 ?>
 
-<link rel="stylesheet" href="../assets/css/jogger.css?v=<?= time() ?>">
+<link rel="stylesheet" href="assets/css/car-jogger.css?v=<?= time() ?>">
 
 <?php
 $model_jogger = [
     "titlu" => "Noul Dacia Jogger",
     "subtitlu" => "Mașina de familie polivalentă, cu până la 7 locuri",
     "descriere" => "Dacia Jogger reinventează mașina de familie. Cu lungimea unui break, spațiul interior al unui monovolum și liniile robuste ale unui SUV, Jogger este o adevărată mașină polivalentă. Construit pe platforma modernă CMF-B, oferă o experiență de condus excelentă, un spațiu modular inegalabil pentru până la 7 pasageri adulți și opțiunea unei motorizări hibride de top.",
-    "imagine" => "../assets/images/info/jogger-info1.jfif",
+    "imagine" => "assets/images/info/jogger-info1.jfif",
     "specificatii" => [
         "Motorizare" => "HYBRID 140 / ECO-G 100 / TCe 110",
         "Număr locuri" => "5 sau 7 locuri",
@@ -64,11 +64,11 @@ $model_jogger = [
                 </ul>
             </div>
         </div>
-        <img class="jogger-image" src="../assets/images/info/jogger-info2.jfif" alt="Dacia Jogger - detalii suplimentare">
+        <img class="jogger-image" src="assets/images/info/jogger-info2.jfif" alt="Dacia Jogger - detalii suplimentare">
     </div>
     <div class="jogger-back-btn">
-        <a href="../nav-autoturisme.php" class="btn-account">Înapoi la Autoturisme</a>
+        <a href="nav-autoturisme.php" class="btn-account">Înapoi la Autoturisme</a>
     </div>
 </div>
 
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+<?php include __DIR__ . '/includes/footer.php'; ?>
