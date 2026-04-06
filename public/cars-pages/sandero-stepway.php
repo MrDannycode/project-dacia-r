@@ -1,8 +1,11 @@
 <?php session_start(); ?>
-<?php include __DIR__ . '/includes/header.php'; ?>
+<?php 
+$is_subdir = true;
+include __DIR__ . '/../includes/header.php'; 
+?>
 
 
-<link rel="stylesheet" href="assets/css/sandero-stepway.css?v=<?= time() ?>">
+<link rel="stylesheet" href="../assets/css/sandero-stepway.css?v=<?= time() ?>">
 
 
 <?php
@@ -10,7 +13,7 @@ $model_stepway = [
     "titlu" => "Noul Dacia Sandero Stepway",
     "subtitlu" => "Crossover-ul urban gata de aventură",
     "descriere" => "Cu o gardă la sol înălțată, bare de pavilion modulare și un design impunător de crossover, noul Dacia Sandero Stepway este pregătit pentru orice drum. Combină agilitatea unui hatchback cu robustețea unui SUV, oferind un interior confortabil, tehnologie modernă și un spirit aventurier inconfundabil.",
-    "imagine" => "assets/images/san-step1.jfif",
+    "imagine" => "../assets/images/san-step1.jfif",
     "specificatii" => [
         "Motorizare" => "TCe 90 / ECO-G 100 / TCe 110",
         "Gardă la sol" => "201 mm",
@@ -63,14 +66,14 @@ $model_stepway = [
                 </ul>
             </div>
         </div>
-        <img class="stepway-image" src="assets/images/san-step2.jfif"
+        <img class="stepway-image" src="../assets/images/san-step2.jfif"
             alt="Dacia Sandero Stepway - detalii suplimentare">
     </div>
 
 
     <div class="stepway-back-btn">
-        <a href="autoturisme.php" class="btn-account">Înapoi la Autoturisme</a>
+        <a href="../nav-autoturisme.php" class="btn-account">Înapoi la Autoturisme</a>
     </div>
 </div>
 
-<?php include __DIR__ . '/includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

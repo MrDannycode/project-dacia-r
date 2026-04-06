@@ -28,13 +28,13 @@ $masini = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Map model names to image files and detail pages
 $modelMap = [
-    'Sandero Stepway' => ['img' => 'sandero-mic.jpg', 'page' => 'striker.php'],
-    'Sandero' => ['img' => 'sandero-mic.jpg', 'page' => 'sandero.php'],
-    'Logan' => ['img' => 'logan-mic.png', 'page' => 'logan.php'],
-    'Duster' => ['img' => 'duster-mic.jpg', 'page' => 'duster.php'],
-    'Bigster' => ['img' => 'bigster-mic.jpg', 'page' => 'bigster.php'],
-    'Jogger' => ['img' => 'jogger-mic.jpg', 'page' => 'jogger.php'],
-    'Spring' => ['img' => 'spring-micc.jpg', 'page' => 'spring.php'],
+    'Sandero Stepway' => ['img' => 'sandero-mic.jpg', 'page' => 'cars-pages/sandero-stepway.php'],
+    'Sandero' => ['img' => 'sandero-mic.jpg', 'page' => 'cars-pages/sandero.php'],
+    'Logan' => ['img' => 'logan-mic.png', 'page' => 'cars-pages/logan.php'],
+    'Duster' => ['img' => 'duster-mic.jpg', 'page' => 'cars-pages/duster.php'],
+    'Bigster' => ['img' => 'bigster-mic.jpg', 'page' => 'cars-pages/bigster.php'],
+    'Jogger' => ['img' => 'jogger-mic.jpg', 'page' => 'cars-pages/jogger.php'],
+    'Spring' => ['img' => 'spring-micc.jpg', 'page' => 'cars-pages/spring.php'],
 ];
 ?>
 

@@ -1,14 +1,17 @@
 <?php session_start(); ?>
-<?php include __DIR__ . '/includes/header.php'; ?>
+<?php 
+$is_subdir = true;
+include __DIR__ . '/../includes/header.php'; 
+?>
 
-<link rel="stylesheet" href="assets/css/duster.css?v=<?= time() ?>">
+<link rel="stylesheet" href="../assets/css/duster.css?v=<?= time() ?>">
 
 <?php
 $model_duster = [
     "titlu" => "Noul Dacia Duster",
     "subtitlu" => "SUV-ul iconic, mai robust și mai tehnologizat ca niciodată",
     "descriere" => "A treia generație Dacia Duster își păstrează spiritul aventurier, dar vine cu un design complet nou, mai vertical și mai impunător. Construit pe platforma CMF-B, oferă pentru prima dată motorizări electrificate (HYBRID și mild-hybrid), materiale inovatoare și sustenabile precum Starkle®, și capacități off-road la un nivel superior. Este partenerul ideal pentru orice teren, combinând durabilitatea legendară cu tehnologia modernă.",
-    "imagine" => "assets/images/duster-info1.jfif",
+    "imagine" => "../assets/images/info/duster-info1.jfif",
     "specificatii" => [
         "Motorizare" => "HYBRID 140 / TCe 130 48V / ECO-G 100",
         "Tracțiune" => "Disponibil 4x2 sau 4x4",
@@ -62,10 +65,10 @@ $model_duster = [
             </div>
         </div>
     </div>
-        <img class="duster-image" src="assets/images/duster-info2.jfif" alt="Dacia Duster - detalii suplimentare">
+        <img class="duster-image" src="../assets/images/info/duster-info2.jfif" alt="Dacia Duster - detalii suplimentare">
         <div class="duster-back-btn">
-            <a href="autoturisme.php" class="btn-account">Înapoi la Autoturisme</a>
+            <a href="../nav-autoturisme.php" class="btn-account">Înapoi la Autoturisme</a>
         </div>
     </div>
 
-<?php include __DIR__ . '/includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

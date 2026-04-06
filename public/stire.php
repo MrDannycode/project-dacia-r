@@ -10,7 +10,7 @@ $stmt->execute([':id' => $id]);
 $stire = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$stire) {
-    header("Location: news.php");
+    header("Location: nav-news.php");
     exit();
 }
 
@@ -29,7 +29,7 @@ include __DIR__ . '/includes/header.php';
             <?= $stire['continut'] ?>
         </div>
         
-        <p style="margin-top: 2rem;"><a href="news.php" class="btn" style="background:#f75d34; color:#fff; padding: 10px 15px; text-decoration:none; border-radius:4px; font-weight: bold;">&larr; Înapoi la Știri</a></p>
+        <p style="margin-top: 2rem;"><a href="nav-news.php" class="btn" style="background:#f75d34; color:#fff; padding: 10px 15px; text-decoration:none; border-radius:4px; font-weight: bold;">&larr; Înapoi la Știri</a></p>
     </div>
 </main>
 <?php include __DIR__ . '/includes/footer.php'; ?>

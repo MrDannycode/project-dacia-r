@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $titlu = $_POST['titlu'] ?? '';
         $descriere = $_POST['descriere'] ?? '';
         $continut = $_POST['continut'] ?? '';
-        $imagine = $_POST['imagine'] ?? 'assets/images/news-lansare.jpg';
+        $imagine = $_POST['imagine'] ?? 'assets/images/news/news-lansare.jpg';
         $alt_imagine = $_POST['alt_imagine'] ?? '';
         
         if (empty($titlu) || empty($descriere) || empty($continut)) {
@@ -137,7 +137,7 @@ require_once __DIR__ . '/includes/header.php';
                 <textarea name="continut" style="width: 100%; height: 150px; padding: 8px;" required><?= htmlspecialchars($stire['continut']) ?></textarea>
             </p>
             <p>
-                <label>Calea Imaginii (ex: assets/images/news-lansare.jpg):</label><br>
+                <label>Calea Imaginii (ex: assets/images/news/news-lansare.jpg):</label><br>
                 <input type="text" name="imagine" value="<?= htmlspecialchars($stire['imagine']) ?>" style="width: 100%; padding: 8px;">
             </p>
             <p>

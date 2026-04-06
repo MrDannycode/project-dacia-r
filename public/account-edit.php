@@ -91,7 +91,7 @@ require_once __DIR__ . '/includes/header.php';
             </form>
             
             <div class="auth-links" style="margin-top: 20px;">
-                <a href="cont.php" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; color: #555; text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: #f0f0f0; transition: all 0.3s ease;">
+                <a href="account.php" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; color: #555; text-decoration: none; font-weight: 600; padding: 10px 20px; border-radius: 8px; background: #f0f0f0; transition: all 0.3s ease;">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="19" y1="12" x2="5" y2="12"></line>
                         <polyline points="12 19 5 12 12 5"></polyline>

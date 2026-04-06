@@ -30,7 +30,7 @@ if (!isset($_SESSION["user_id"])) {
             <p class="account-card-desc">
                 Actualizează-ți informațiile personale și adresa de email asociată contului.
             </p>
-            <a href="profil-edit.php" class="btn-account">Editează Profilul</a>
+            <a href="account-edit.php" class="btn-account">Editează Profilul</a>
         </div>
 
         <!-- Security -->
@@ -46,7 +46,7 @@ if (!isset($_SESSION["user_id"])) {
             <p class="account-card-desc">
                 Schimbă parola și gestionează setările de securitate pentru a-ți proteja contul.
             </p>
-            <a href="profil-security.php" class="btn-account">Setări Securitate</a>
+            <a href="account-security.php" class="btn-account">Setări Securitate</a>
         </div>
 
         <!-- Saved Cars -->
@@ -66,7 +66,7 @@ if (!isset($_SESSION["user_id"])) {
             <p class="account-card-desc">
                 Vezi lista de mașini și configurații pe care le-ai salvat anterior.
             </p>
-            <a href="masinile-mele.php" class="btn-account">Vezi Mașinile</a>
+            <a href="account-cars.php" class="btn-account">Vezi Mașinile</a>
         </div>
 
     </div>

@@ -1,14 +1,17 @@
 <?php session_start(); ?>
-<?php include __DIR__ . '/includes/header.php'; ?>
+<?php 
+$is_subdir = true;
+include __DIR__ . '/../includes/header.php'; 
+?>
 
-<link rel="stylesheet" href="assets/css/sandero.css?v=<?= time() ?>">
+<link rel="stylesheet" href="../assets/css/sandero.css?v=<?= time() ?>">
 
 <?php
 $model_sandero = [
     "titlu" => "Noul Dacia Sandero",
     "subtitlu" => "Hatchback-ul modern, agil și accesibil",
     "descriere" => "Construit pe platforma modernă CMF-B, a treia generație Dacia Sandero se remarcă printr-un design dinamic, proporții echilibrate și o semnătură luminoasă distinctivă în formă de Y. Oferă un interior ergonomic, materiale de calitate superioară și tehnologii esențiale integrate inteligent, fiind partenerul ideal atât pentru traficul urban, cât și pentru escapadele de weekend.",
-    "imagine" => "assets/images/sandero-info1.jfif",
+    "imagine" => "../assets/images/info/sandero-info1.jfif",
     "specificatii" => [
         "Motorizare" => "SCe 65 / TCe 90 / ECO-G 100",
         "Volum Portbagaj" => "328 Litri",
@@ -61,13 +64,13 @@ $model_sandero = [
                 </ul>
             </div>
         </div>
-        <img class="sandero-image" src="assets/images/sandero-info2.jfif" alt="Dacia Sandero - detalii suplimentare">
+        <img class="sandero-image" src="../assets/images/info/sandero-info2.jfif" alt="Dacia Sandero - detalii suplimentare">
     </div>
 
 
     <div class="sandero-back-btn">
-        <a href="autoturisme.php" class="btn-account">Înapoi la Autoturisme</a>
+        <a href="../nav-autoturisme.php" class="btn-account">Înapoi la Autoturisme</a>
     </div>
 </div>
 
-<?php include __DIR__ . '/includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

@@ -9,13 +9,13 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $success = '';
-$error   = '';
+$error = '';
 
 // ── 1. POST: salvează configurația ──────────────────────────────────────────
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id_versiune      = (int)($_POST['id_versiune']      ?? 0);
-    $culoare          = trim($_POST['culoare']           ?? 'Alb');
-    $pret_final       = (float)($_POST['pret_final']     ?? 0);
+    $id_versiune = (int) ($_POST['id_versiune'] ?? 0);
+    $culoare = trim($_POST['culoare'] ?? 'Alb');
+    $pret_final = (float) ($_POST['pret_final'] ?? 0);
 
     if ($id_versiune > 0 && $pret_final > 0) {
         try {
@@ -24,10 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 VALUES (:uid, :vid, :culoare, :pret, 'Configurare Salvată')
             ");
             $stmt->execute([
-                ':uid'    => $_SESSION['user_id'],
-                ':vid'    => $id_versiune,
-                ':culoare'=> $culoare,
-                ':pret'   => $pret_final,
+                ':uid' => $_SESSION['user_id'],
+                ':vid' => $id_versiune,
+                ':culoare' => $culoare,
+                ':pret' => $pret_final,
             ]);
             $success = 'Configurația a fost salvată cu succes!';
         } catch (PDOException $e) {
@@ -67,14 +67,14 @@ foreach ($versiuni_raw as $v) {
 
 // Culorile disponibile
 $culori = [
-    'Alb Glacier'   => '#f0f0f0',
-    'Negru Nacré'   => '#1a1a1a',
-    'Gri Schist'    => '#757575',
-    'Gri Comète'    => '#a0a0a8',
+    'Alb Glacier' => '#f0f0f0',
+    'Negru Nacré' => '#1a1a1a',
+    'Gri Schist' => '#757575',
+    'Gri Comète' => '#a0a0a8',
     'Albastru Iron' => '#2a4a7f',
-    'Verde Cedar'   => '#4a7a5a',
-    'Roșu Flame'    => '#c0392b',
-    'Bej Dunelor'   => '#c8a882',
+    'Verde Cedar' => '#4a7a5a',
+    'Roșu Flame' => '#c0392b',
+    'Bej Dunelor' => '#c8a882',
 ];
 
 include __DIR__ . '/includes/header.php';
@@ -84,19 +84,27 @@ include __DIR__ . '/includes/header.php';
 
     <div class="configurator-header">
         <h1 class="page-title">Configurează-ți Dacia</h1>
-        <p class="page-subtitle">Alege modelul, versiunea, motorizarea și culoarea preferată, apoi salvează configurația în contul tău.</p>
+        <p class="page-subtitle">Alege modelul, versiunea, motorizarea și culoarea preferată, apoi salvează configurația
+            în contul tău.</p>
     </div>
 
     <?php if ($success): ?>
         <div class="cfg-alert cfg-alert--success">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
             <?= htmlspecialchars($success) ?>
-            <a href="masinile-mele.php" class="cfg-alert__link">→ Vezi configurările mele</a>
+            <a href="account-cars.php" class="cfg-alert__link">→ Vezi configurările mele</a>
         </div>
     <?php endif; ?>
     <?php if ($error): ?>
         <div class="cfg-alert cfg-alert--error">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="15" y1="9" x2="9" y2="15" />
+                <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
             <?= htmlspecialchars($error) ?>
         </div>
     <?php endif; ?>
@@ -110,10 +118,12 @@ include __DIR__ . '/includes/header.php';
             <div class="cfg-model-grid" id="model-grid">
                 <?php foreach ($masini as $m): ?>
                     <label class="cfg-model-card" id="model-card-<?= $m['id_masina'] ?>">
-                        <input type="radio" name="id_masina_js" value="<?= $m['id_masina'] ?>" class="cfg-model-radio" required>
+                        <input type="radio" name="id_masina_js" value="<?= $m['id_masina'] ?>" class="cfg-model-radio"
+                            required>
                         <div class="cfg-model-inner">
                             <span class="cfg-model-name"><?= htmlspecialchars($m['nume_model']) ?></span>
-                            <span class="cfg-model-body"><?= htmlspecialchars($m['tip_caroserie']) ?> · <?= $m['numar_locuri'] ?> locuri</span>
+                            <span class="cfg-model-body"><?= htmlspecialchars($m['tip_caroserie']) ?> ·
+                                <?= $m['numar_locuri'] ?> locuri</span>
                         </div>
                         <div class="cfg-model-check">✓</div>
                     </label>
@@ -127,7 +137,7 @@ include __DIR__ . '/includes/header.php';
             <h2 class="cfg-section-title">Alege versiunea &amp; motorizarea</h2>
             <div class="cfg-versions-list" id="versions-list"></div>
             <input type="hidden" name="id_versiune" id="input-versiune" value="">
-            <input type="hidden" name="pret_final"  id="input-pret"     value="">
+            <input type="hidden" name="pret_final" id="input-pret" value="">
         </div>
 
         <!-- STEP 3: Culoare -->
@@ -137,7 +147,8 @@ include __DIR__ . '/includes/header.php';
             <div class="cfg-color-grid">
                 <?php foreach ($culori as $nume => $hex): ?>
                     <label class="cfg-color-swatch" title="<?= htmlspecialchars($nume) ?>">
-                        <input type="radio" name="culoare" value="<?= htmlspecialchars($nume) ?>" class="cfg-color-radio" <?= $nume === 'Alb Glacier' ? 'checked' : '' ?>>
+                        <input type="radio" name="culoare" value="<?= htmlspecialchars($nume) ?>" class="cfg-color-radio"
+                            <?= $nume === 'Alb Glacier' ? 'checked' : '' ?>>
                         <span class="cfg-color-dot" style="background:<?= $hex ?>;"></span>
                         <span class="cfg-color-label"><?= htmlspecialchars($nume) ?></span>
                     </label>
@@ -157,7 +168,11 @@ include __DIR__ . '/includes/header.php';
                 <div class="cfg-summary-row cfg-summary-total"><span>Preț</span><strong id="sum-pret">—</strong></div>
             </div>
             <button type="submit" class="cfg-btn-save" id="btn-save">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+                    <polyline points="17 21 17 13 7 13 7 21" />
+                    <polyline points="7 3 7 8 15 8" />
+                </svg>
                 Salvează Configurația
             </button>
         </div>
@@ -167,46 +182,46 @@ include __DIR__ . '/includes/header.php';
 
 <!-- Datele versiunilor ca JSON pentru JavaScript -->
 <script>
-const VERSIUNI = <?= json_encode($versiuni_by_masina, JSON_UNESCAPED_UNICODE) ?>;
-const MASINI   = <?= json_encode(array_column($masini, null, 'id_masina'), JSON_UNESCAPED_UNICODE) ?>;
+    const VERSIUNI = <?= json_encode($versiuni_by_masina, JSON_UNESCAPED_UNICODE) ?>;
+    const MASINI = <?= json_encode(array_column($masini, null, 'id_masina'), JSON_UNESCAPED_UNICODE) ?>;
 
-// ── UI logic ──────────────────────────────────────────────────────────────────
-let selectedModel    = null;
-let selectedVersiune = null;
+    // ── UI logic ──────────────────────────────────────────────────────────────────
+    let selectedModel = null;
+    let selectedVersiune = null;
 
-// Selectare model
-document.querySelectorAll('.cfg-model-radio').forEach(radio => {
-    radio.addEventListener('change', function () {
-        selectedModel    = parseInt(this.value);
-        selectedVersiune = null;
-        document.getElementById('input-versiune').value = '';
-        document.getElementById('input-pret').value     = '';
+    // Selectare model
+    document.querySelectorAll('.cfg-model-radio').forEach(radio => {
+        radio.addEventListener('change', function () {
+            selectedModel = parseInt(this.value);
+            selectedVersiune = null;
+            document.getElementById('input-versiune').value = '';
+            document.getElementById('input-pret').value = '';
 
-        // Highlight card
-        document.querySelectorAll('.cfg-model-card').forEach(c => c.classList.remove('is-selected'));
-        this.closest('.cfg-model-card').classList.add('is-selected');
+            // Highlight card
+            document.querySelectorAll('.cfg-model-card').forEach(c => c.classList.remove('is-selected'));
+            this.closest('.cfg-model-card').classList.add('is-selected');
 
-        renderVersions(selectedModel);
-        document.getElementById('section-versiune').style.display = '';
-        document.getElementById('section-culoare').style.display  = 'none';
-        document.getElementById('section-summary').style.display  = 'none';
-        updateSummaryModel();
+            renderVersions(selectedModel);
+            document.getElementById('section-versiune').style.display = '';
+            document.getElementById('section-culoare').style.display = 'none';
+            document.getElementById('section-summary').style.display = 'none';
+            updateSummaryModel();
+        });
     });
-});
 
-function renderVersions(id_masina) {
-    const list = document.getElementById('versions-list');
-    list.innerHTML = '';
-    const vers = VERSIUNI[id_masina] || [];
-    if (!vers.length) {
-        list.innerHTML = '<p style="color:var(--color-text-muted)">Nu există versiuni disponibile pentru acest model.</p>';
-        return;
-    }
-    vers.forEach(v => {
-        const card = document.createElement('label');
-        card.className = 'cfg-version-card';
-        card.dataset.versiune = JSON.stringify(v);
-        card.innerHTML = `
+    function renderVersions(id_masina) {
+        const list = document.getElementById('versions-list');
+        list.innerHTML = '';
+        const vers = VERSIUNI[id_masina] || [];
+        if (!vers.length) {
+            list.innerHTML = '<p style="color:var(--color-text-muted)">Nu există versiuni disponibile pentru acest model.</p>';
+            return;
+        }
+        vers.forEach(v => {
+            const card = document.createElement('label');
+            card.className = 'cfg-version-card';
+            card.dataset.versiune = JSON.stringify(v);
+            card.innerHTML = `
             <input type="radio" name="id_versiune_ui" value="${v.id_versiune}" class="cfg-version-radio">
             <div class="cfg-version-inner">
                 <div class="cfg-version-top">
@@ -223,61 +238,61 @@ function renderVersions(id_masina) {
             </div>
             <div class="cfg-model-check">✓</div>
         `;
-        list.appendChild(card);
+            list.appendChild(card);
 
-        card.querySelector('.cfg-version-radio').addEventListener('change', function () {
-            selectedVersiune = v;
-            document.getElementById('input-versiune').value = v.id_versiune;
-            document.getElementById('input-pret').value     = v.pret_euro;
+            card.querySelector('.cfg-version-radio').addEventListener('change', function () {
+                selectedVersiune = v;
+                document.getElementById('input-versiune').value = v.id_versiune;
+                document.getElementById('input-pret').value = v.pret_euro;
 
-            document.querySelectorAll('.cfg-version-card').forEach(c => c.classList.remove('is-selected'));
-            card.classList.add('is-selected');
+                document.querySelectorAll('.cfg-version-card').forEach(c => c.classList.remove('is-selected'));
+                card.classList.add('is-selected');
 
-            document.getElementById('section-culoare').style.display  = '';
-            document.getElementById('section-summary').style.display  = '';
+                document.getElementById('section-culoare').style.display = '';
+                document.getElementById('section-summary').style.display = '';
+                updateSummary();
+            });
+        });
+    }
+
+    // Culoare
+    document.querySelectorAll('.cfg-color-radio').forEach(r => {
+        r.addEventListener('change', updateSummary);
+    });
+
+    function updateSummaryModel() {
+        if (selectedModel && MASINI[selectedModel]) {
+            document.getElementById('sum-model').textContent = MASINI[selectedModel].nume_model;
+        }
+    }
+
+    function updateSummary() {
+        updateSummaryModel();
+        if (selectedVersiune) {
+            document.getElementById('sum-versiune').textContent = selectedVersiune.nivel_echipare;
+            document.getElementById('sum-motor').textContent =
+                selectedVersiune.nume_motor + ' · ' + selectedVersiune.putere_cp + ' CP';
+            document.getElementById('sum-pret').textContent =
+                Number(selectedVersiune.pret_euro).toLocaleString('ro-RO') + ' €';
+        }
+        const culoare = document.querySelector('.cfg-color-radio:checked');
+        if (culoare) {
+            document.getElementById('sum-culoare').textContent = culoare.value;
+        }
+    }
+
+    // Re-update culoare la schimbare
+    document.querySelectorAll('.cfg-color-radio').forEach(r => {
+        r.addEventListener('change', function () {
+            document.querySelectorAll('.cfg-color-swatch').forEach(s => s.classList.remove('is-selected'));
+            this.closest('.cfg-color-swatch').classList.add('is-selected');
             updateSummary();
         });
     });
-}
 
-// Culoare
-document.querySelectorAll('.cfg-color-radio').forEach(r => {
-    r.addEventListener('change', updateSummary);
-});
-
-function updateSummaryModel() {
-    if (selectedModel && MASINI[selectedModel]) {
-        document.getElementById('sum-model').textContent = MASINI[selectedModel].nume_model;
-    }
-}
-
-function updateSummary() {
-    updateSummaryModel();
-    if (selectedVersiune) {
-        document.getElementById('sum-versiune').textContent = selectedVersiune.nivel_echipare;
-        document.getElementById('sum-motor').textContent =
-            selectedVersiune.nume_motor + ' · ' + selectedVersiune.putere_cp + ' CP';
-        document.getElementById('sum-pret').textContent =
-            Number(selectedVersiune.pret_euro).toLocaleString('ro-RO') + ' €';
-    }
-    const culoare = document.querySelector('.cfg-color-radio:checked');
-    if (culoare) {
-        document.getElementById('sum-culoare').textContent = culoare.value;
-    }
-}
-
-// Re-update culoare la schimbare
-document.querySelectorAll('.cfg-color-radio').forEach(r => {
-    r.addEventListener('change', function () {
-        document.querySelectorAll('.cfg-color-swatch').forEach(s => s.classList.remove('is-selected'));
-        this.closest('.cfg-color-swatch').classList.add('is-selected');
-        updateSummary();
-    });
-});
-
-// Init culoare default
-const defaultColor = document.querySelector('.cfg-color-radio:checked');
-if (defaultColor) defaultColor.closest('.cfg-color-swatch').classList.add('is-selected');
+    // Init culoare default
+    const defaultColor = document.querySelector('.cfg-color-radio:checked');
+    if (defaultColor) defaultColor.closest('.cfg-color-swatch').classList.add('is-selected');
 </script>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
