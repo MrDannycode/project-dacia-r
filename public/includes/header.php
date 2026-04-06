@@ -37,8 +37,10 @@ $prefix = (isset($is_subdir) && $is_subdir) ? '../' : '';
                 <a href="<?= $prefix ?>nav-news.php">Știri</a>
                 <a href="<?= $prefix ?>nav-harta.php">Harta reprezentanțe</a>
                 <a href="<?= $prefix ?>account.php">My Dacia</a>
-                <?php if (isset($_SESSION["role"]) && in_array($_SESSION["role"], ['news_admin', 'super_admin'])): ?>
-                    <a href="<?= $prefix ?>admin-stiri.php" style="margin-left: auto;">Administrează Știrile</a>
+                <?php if (isset($_SESSION["role"]) && $_SESSION["role"] === 'news_admin'): ?>
+                    <a href="<?= $prefix ?>admin-stiri.php" style="margin-left: auto;">Panou Admin Știri</a>
+                <?php elseif (isset($_SESSION["role"]) && $_SESSION["role"] === 'super_admin'): ?>
+                    <a href="<?= $prefix ?>admin-super.php" style="margin-left: auto;">Panou Super Admin</a>
                 <?php endif; ?>
             </nav>
         </div>

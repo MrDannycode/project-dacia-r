@@ -121,6 +121,18 @@ body {
   color: #fff;
 }
 
+.site-nav .nav-super-admin {
+  background: linear-gradient(90deg, rgba(247, 201, 72, 0.2), rgba(247, 93, 52, 0.2));
+  color: #f7c948 !important;
+  border: 1px solid rgba(247, 201, 72, 0.35);
+  font-weight: 700;
+}
+
+.site-nav .nav-super-admin:hover {
+  background: linear-gradient(90deg, rgba(247, 201, 72, 0.35), rgba(247, 93, 52, 0.35)) !important;
+  color: #fff !important;
+}
+
 /* ===== Main Content ===== */
 main {
   flex: 1;

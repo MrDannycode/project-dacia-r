@@ -64,9 +64,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 require_once __DIR__ . '/includes/header.php';
 ?>
-<div class="content">
-    <h2>Administrare Știri</h2>
-    
+<link rel="stylesheet" href="assets/css/admin-super.css?v=<?= time() ?>">
+
+<div class="sa-wrapper" style="max-width: 900px; padding-bottom: 0; margin-bottom: 0;">
+    <!-- ── Page Header ─────────────────────────────── -->
+    <div class="sa-page-header" style="margin-bottom: 0;">
+        <div class="sa-page-header-left">
+            <span class="sa-badge" style="background: linear-gradient(135deg, #a29bfe, #6c5ce7);">Admin Știri</span>
+            <h2>Administrare Știri</h2>
+            <p>Gestionează știrile și articolele publicate pe platforma Dacia.</p>
+        </div>
+        <div class="sa-page-header-right">
+            <img src="assets/images/logo.jpg" alt="Dacia Logo" class="sa-logo">
+        </div>
+    </div>
+</div>
+
+<div class="content" style="margin-top: 1.5rem;">
     <?php if ($error): ?><p style="color:red;"><?= htmlspecialchars($error) ?></p><?php endif; ?>
     <?php if ($success): ?><p style="color:green;"><?= htmlspecialchars($success) ?></p><?php endif; ?>
 
