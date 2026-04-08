@@ -23,6 +23,13 @@ VALUES
     -- ==========================================
     (1, 3, 'Expression', 14500.00), -- Logan, Eco-G 120, Expression
     (1, 3, 'Journey', 15800.00),    -- Logan, Eco-G 120, Journey
+    
+    -- ==========================================
+    -- DACIA SANDERO (id_masina = 2)
+    -- ==========================================
+    (2, 9, 'Essential', 12900.00),  -- Sandero, SCe 65, Essential
+    (2, 10, 'Expression', 14200.00), -- Sandero, TCe 90, Expression
+    (2, 11, 'Journey', 15500.00),    -- Sandero, ECO-G 100, Journey
 
     -- ==========================================
     -- DACIA SANDERO STEPWAY (id_masina = 3)

@@ -14,4 +14,9 @@ VALUES
     
     -- Sistemele 100% Electrice (Dacia Spring)
     ('Electric 70', 'Electric', NULL, 70, '100% Electric', 'Automata (Reductor)', '4x2'),
-    ('Electric 100', 'Electric', NULL, 100, '100% Electric', 'Automata (Reductor)', '4x2');
+    ('Electric 100', 'Electric', NULL, 100, '100% Electric', 'Automata (Reductor)', '4x2'),
+
+    -- Sistemele pentru Sandero (id_masina = 2)
+    ('SCe 65', 'Benzina', 999, 65, NULL, 'Manuala', '4x2'),
+    ('TCe 90', 'Benzina', 999, 90, NULL, 'Manuala', '4x2'),
+    ('ECO-G 100', 'Benzina + GPL', 999, 100, NULL, 'Manuala', '4x2');
